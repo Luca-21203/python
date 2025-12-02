@@ -1,22 +1,15 @@
+# Funció que comprova si una paraula és un palíndrom
 def es_palindrom(paraula):
     """
     Retorna True si la paraula és un palíndrom, False en cas contrari.
-    Un palíndrom és una paraula que s'escriu igual d'esquerra a dreta i de dreta a esquerra.
+    La funció ignora majúscules/minúscules.
     """
-    # Convertir a minúscules per fer la comparació case-insensitive
-    paraula = paraula.lower()
-    
-    # Comparar la paraula amb la seva versió invertida
+    paraula = paraula.lower()  # Convertim a minúscules per comparar correctament
     return paraula == paraula[::-1]
 
+# Proves
+paraules_prova = ["radar", "ara", "civic", "rallar", "tapat", "simis", "refer", "Python", "hola"]
 
-# Exemples d'ús
-print(es_palindrom("radar"))   # True
-print(es_palindrom("ara"))     # True
-print(es_palindrom("civic"))   # True
-print(es_palindrom("rallar"))  # True
-print(es_palindrom("tapat"))   # True
-print(es_palindrom("simis"))   # True
-print(es_palindrom("refer"))   # True
-print(es_palindrom("casa"))    # False
-print(es_palindrom("python"))  # False
+for p in paraules_prova:
+    print(f"{p}: {es_palindrom(p)}")
+
