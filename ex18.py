@@ -1,23 +1,17 @@
+# Definim la funció
 def es_vocal(caracter):
     """
     Retorna True si el caràcter és una vocal, False en cas contrari.
+    Considera majúscules i minúscules.
     """
-    vocals = "aeiouAEIOUàèéíòóúÀÈÉÍÒÓÚäëïöüÄËÏÖÜ"
-    return caracter in vocals
+    vocals = "aeiouàèéíïòóúüAEIOUÀÈÉÍÏÒÓÚÜ"
+    if caracter in vocals:
+        return True
+    else:
+        return False
 
+# Proves de la funció
+llista_caracters = ['a', 'b', 'E', 'z', 'ó', 'u', 'X']
 
-# Proves amb diferents exemples
-print(es_vocal('a'))    # True
-print(es_vocal('e'))    # True
-print(es_vocal('i'))    # True
-print(es_vocal('o'))    # True
-print(es_vocal('u'))    # True
-print(es_vocal('A'))    # True
-print(es_vocal('E'))    # True
-print(es_vocal('b'))    # False
-print(es_vocal('z'))    # False
-print(es_vocal('x'))    # False
-print(es_vocal('à'))    # True
-print(es_vocal('é'))    # True
-print(es_vocal('3'))    # False
-print(es_vocal(' '))    # False
+for c in llista_caracters:
+    print(f"{c}: {es_vocal(c)}")
