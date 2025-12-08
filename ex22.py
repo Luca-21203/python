@@ -1,21 +1,27 @@
-# Funció per comprovar si dues llistes tenen algun element en comú
 def superposicio(llista1, llista2):
-    """
-    Retorna True si hi ha algun element en comú entre llista1 i llista2,
-    False en cas contrari.
-    """
     for element in llista1:
         if element in llista2:
             return True
     return False
 
-# Proves
-llista_a = [1, 2, 3, 4]
-llista_b = [5, 6, 7]
-llista_c = [3, 7, 8]
-llista_d = []
 
-print(superposicio(llista_a, llista_b))  # False
-print(superposicio(llista_a, llista_c))  # True (3 està en comú)
-print(superposicio(llista_b, llista_c))  # True (7 està en comú)
-print(superposicio(llista_a, llista_d))  # False
+# Demanar la primera llista
+llista1 = []
+print("Introdueix els elements de la primera llista. Escriu 'fi' per acabar:")
+while True:
+    x = input("Element: ")
+    if x == "fi":
+        break
+    llista1.append(x)
+
+# Demanar la segona llista
+llista2 = []
+print("Introdueix els elements de la segona llista. Escriu 'fi' per acabar:")
+while True:
+    y = input("Element: ")
+    if y == "fi":
+        break
+    llista2.append(y)
+
+# Mostrar resultat
+print(superposicio(llista1, llista2))
