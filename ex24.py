@@ -1,12 +1,20 @@
-# Funció per crear punts segons els valors d'una llista
 def crear_punts(llista):
-    """
-    Per cada número de la llista, imprimeix una línia amb tants punts com el valor del número.
-    """
-    for num in llista:
-        print("." * num)
+    for nombre in llista:
+        print("." * int(nombre))
 
-# Proves
-crear_punts([2, 3, 4])
-print("---")
-crear_punts([1, 5, 2])
+
+# Demanar la llista a l'usuari
+llista = []
+print("Introdueix números enters. Escriu 'fi' per acabar:")
+
+while True:
+    valor = input("Número: ")
+
+    if valor == "fi":
+        break
+
+    llista.append(int(valor))
+
+
+# Cridar la funció
+crear_punts(llista)
