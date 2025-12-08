@@ -1,27 +1,28 @@
-# Definim la funció
-def longitud(obj):
-    """
-    Calcula la longitud d'una llista o d'una cadena.
-    
-    Args:
-    obj (list o str): Llista o cadena de la qual volem la longitud.
-    
-    Returns:
-    int: Longitud de l'objecte.
-    """
-    return len(obj)  # Utilitzem la funció integrada len()
+def longitud(x):
+    comptador = 0
+    for _ in x:
+        comptador += 1
+    return comptador
 
-# Proves amb diferents exemples
-# Exemple 1: llista
-llista_ex = [1, 2, 3, 4, 5]
-print("Longitud de la llista:", longitud(llista_ex))
 
-# Exemple 2: cadena
-cadena_ex = "Hola món"
-print("Longitud de la cadena:", longitud(cadena_ex))
+# Demanar si vol una llista o una cadena
+opcio = input("Vols introduir una llista o una cadena? (l/c): ")
 
-# Exemple 3: llista buida
-print("Longitud de la llista buida:", longitud([]))
+if opcio == "c":
+    text = input("Introdueix una cadena: ")
+    print(longitud(text))
 
-# Exemple 4: cadena buida
-print("Longitud de la cadena buida:", longitud(""))
+elif opcio == "l":
+    llista = []
+    print("Introdueix els valors de la llista. Escriu 'fi' per acabar.")
+
+    while True:
+        valor = input("Valor: ")
+        if valor == "fi":
+            break
+        llista.append(valor)
+
+    print(longitud(llista))
+
+else:
+    print("Opció no vàlida")
