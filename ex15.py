@@ -1,18 +1,13 @@
-def gran(num1, num2):
-    """
-    Donats dos números, retorna el major.
-    """
-    if num1 > num2:
-        return num1
+def gran(a, b):
+    if a > b:
+        return a
     else:
-        return num2
+        return b
 
 
-# Proves amb diferents exemples
-print(gran(5, 3))      # 5
-print(gran(10, 20))    # 20
-print(gran(-5, -10))   # -5
-print(gran(7, 7))      # 7
-print(gran(0, 100))    # 100
-print(gran(3.5, 2.8))  # 3.5
-print(gran(-15, 0))    # 0
+# Demanar els dos números a l'usuari
+num1 = float(input("Introdueix el primer número: "))
+num2 = float(input("Introdueix el segon número: "))
+
+# Mostrar el resultat
+print(gran(num1, num2))
